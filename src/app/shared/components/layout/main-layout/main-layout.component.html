@@ -1,39 +1,11 @@
-<mat-grid-list cols="5" rowHeight="2:1">
-  <mat-grid-tile [colspan]="5">
-    <mat-toolbar>
-      <mat-toolbar-row>
-        <span>Osalam Example Angular</span>
-        <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
-        <mat-menu #aboveMenu="matMenu" yPosition="above">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
-
-        <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
-        <mat-menu #belowMenu="matMenu" yPosition="below">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
-
-        <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
-        <mat-menu #beforeMenu="matMenu" xPosition="before">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
-
-
-        <button mat-button [matMenuTriggerFor]="afterMenu">After</button>
-        <mat-menu #afterMenu="matMenu" xPosition="after">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </mat-grid-tile>
-  <mat-grid-tile>Navigator</mat-grid-tile>
-  <mat-grid-tile [colspan]="3">
-    <router-outlet></router-outlet>
-  </mat-grid-tile>
-  <mat-grid-tile>Action Menu</mat-grid-tile>
-  <mat-grid-tile [colspan]="5">Footer</mat-grid-tile>
-</mat-grid-list>
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav">
+    <p>Menu</p>
+  </mat-drawer>
+  <div class="sidenav-content">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>Menu</mat-icon>
+    </button>
+  </div>
+</mat-drawer-container>
+<router-outlet></router-outlet>

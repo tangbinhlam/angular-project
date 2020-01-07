@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {MaterialModule} from './material-module';
 import {MainLayoutComponent} from './components/layout';
 import {RouterModule} from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {RouterModule} from '@angular/router';
     CommonModule,
     MaterialModule,
     RouterModule,
+    BrowserAnimationsModule,
   ]
 })
 export class SharedModule {
