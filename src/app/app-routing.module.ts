@@ -9,9 +9,16 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-        path: 'overview',
-        pathMatch: 'full',
-        loadChildren: './modules/overview/overview.module#OverviewModule',
+        path: 'customers',
+        loadChildren: './modules/customers/customers.module#CustomersModule',
+      },
+      {
+        path: 'messages',
+        loadChildren: './modules/messages/messages.module#MessagesModule',
+      },
+      {
+        path: 'orders',
+        loadChildren: './modules/orders/orders.module#OrdersModule',
       },
     ]
   }
