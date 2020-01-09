@@ -22,7 +22,7 @@
         </mat-autocomplete>
       </mat-form-field>
       <div>
-        <button mat-icon-button matStepperNext>
+        <button mat-icon-button matStepperNext matTooltip="Continue">
           <mat-icon>arrow_forward</mat-icon>
         </button>
       </div>
@@ -35,10 +35,10 @@
         <input matInput placeholder="Message" formControlName="messageCtrl" required>
       </mat-form-field>
       <div>
-        <button mat-icon-button matStepperPrevious>
+        <button mat-icon-button matStepperPrevious matTooltip="Back">
           <mat-icon>arrow_back</mat-icon>
         </button>
-        <button mat-icon-button matStepperNext>
+        <button mat-icon-button matStepperNext matTooltip="Send email">
           <mat-icon>mail_outline</mat-icon>
         </button>
       </div>
@@ -48,10 +48,10 @@
     <ng-template matStepLabel>Preview</ng-template>
     <p>Message sent!</p>
     <div>
-      <button mat-icon-button matStepperPrevious>
+      <button mat-icon-button matStepperPrevious matTooltip="Back">
         <mat-icon>arrow_back</mat-icon>
       </button>
-      <button mat-icon-button (click)="stepper.reset()">
+      <button mat-icon-button (click)="stepper.reset()" matTooltip="Reset">
         <mat-icon>refresh</mat-icon>
       </button>
     </div>
