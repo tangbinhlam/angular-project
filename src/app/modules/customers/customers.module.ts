@@ -1,16 +1,18 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { CustomersRoutingModule } from './customers-routing.module';
-import { CustomerListComponent } from './customer-list/customer-list.component';
-import { CustomerCardComponent } from './customer-card/customer-card.component';
+import {CustomersRoutingModule} from './customers-routing.module';
+import {CustomerListComponent} from './customer-list/customer-list.component';
+import {CustomerCardComponent} from './customer-card/customer-card.component';
 import {MaterialModule} from '../../shared/material-module';
-import { CustomerNewComponent } from './customer-new/customer-new.component';
+import {CustomerNewComponent} from './customer-new/customer-new.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RepDialogComponent} from './rep-dialog/rep-dialog.component';
 
 
 @NgModule({
-  declarations: [CustomerListComponent, CustomerCardComponent, CustomerNewComponent],
+  declarations: [CustomerListComponent, CustomerCardComponent, CustomerNewComponent, RepDialogComponent],
+  entryComponents: [RepDialogComponent],
   imports: [
     CommonModule,
     CustomersRoutingModule,
@@ -19,4 +21,5 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
   ]
 })
-export class CustomersModule { }
+export class CustomersModule {
+}

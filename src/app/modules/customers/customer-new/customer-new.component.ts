@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {OsalamErrorStateMatcher} from '../../../shared/ErrorUtils/OsalamErrorStateMatcher';
+import {MatDialog} from '@angular/material';
+import {RepDialogComponent} from '../rep-dialog/rep-dialog.component';
 
 @Component({
   selector: 'osalam-customer-new',
@@ -11,7 +13,7 @@ export class CustomerNewComponent implements OnInit {
   matcher = new OsalamErrorStateMatcher();
   formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -22,6 +24,16 @@ export class CustomerNewComponent implements OnInit {
       address: ['', Validators.required],
       phone: ['', Validators.required],
       fax: [''],
+    });
+  }
+
+  openRepDialog() {
+    const dialogRef = this.dialog.open(RepDialogComponent, {
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      alert(`User chose ${result}`);
     });
   }
 }

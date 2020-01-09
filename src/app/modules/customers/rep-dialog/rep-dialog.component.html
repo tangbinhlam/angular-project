@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title>Select a rep</mat-card-title>
+  <mat-card-content>
+    <mat-radio-group [(ngModel)]="rep">
+      <mat-radio-button value="John Doe" class="full-width">John Doe</mat-radio-button>
+      <mat-radio-button value="Mary Jones" class="full-width">Mary Jones</mat-radio-button>
+    </mat-radio-group>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" [mat-dialog-close]="rep">SELECT</button>
+  </mat-card-actions>
+</mat-card>
+
