@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {OsalamErrorStateMatcher} from '../../../shared/ErrorUtils/OsalamErrorStateMatcher';
-import {MatDialog} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {RepDialogComponent} from '../rep-dialog/rep-dialog.component';
 
 @Component({
@@ -13,7 +13,9 @@ export class CustomerNewComponent implements OnInit {
   matcher = new OsalamErrorStateMatcher();
   formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, public dialog: MatDialog) {
+  constructor(private formBuilder: FormBuilder,
+              public dialog: MatDialog,
+              private snackbar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -34,6 +36,16 @@ export class CustomerNewComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       alert(`User chose ${result}`);
+    });
+  }
+
+  openUndoSnackBar() {
+    const snackBarRef = this.snackbar.open('Customer saved', 'Undo', {
+      horizontalPosition: 'end',
+    });
+
+    snackBarRef.onAction().subscribe(() => {
+      alert('Undo that save');
     });
   }
 }
