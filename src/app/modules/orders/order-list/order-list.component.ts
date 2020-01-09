@@ -1,15 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {OrderService} from '../../../core/services/order.service';
+import {MatSort, MatTableDataSource} from '@angular/material';
+import Order from '../../../domain/models/order.model';
 
 @Component({
-  selector: 'app-order-list',
+  selector: 'osalam-order-list',
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.less']
 })
 export class OrderListComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['action', 'orderNumber', 'orderDate', 'description', 'total'];
+  ELEMENT_DATA: Order[] = [];
+  dataSource: MatTableDataSource<Order>;
 
-  ngOnInit() {
+  length = 100;
+  pageIndex = 0;
+  pageSize = 10;
+  pageSizeOptions = [1, 2, 5, 10];
+  sum = 0;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
+  constructor(private orderService: OrderService) {
   }
 
+  ngOnInit() {
+    this.orderService.getAllOrders$().subscribe(orders => {
+      this.ELEMENT_DATA = orders;
+      this.loadData(0, this.pageSize);
+      this.dataSource.sort = this.sort;
+    });
+  }
+
+  onPageChange(e) {
+    this.pageIndex = e.pageIndex;
+    this.pageSize = e.pageSize;
+    this.loadData(this.pageIndex, this.pageSize);
+  }
+
+  loadData(pageIndex, pageSize) {
+    this.dataSource = new MatTableDataSource<Order>(this.ELEMENT_DATA.slice(pageIndex, pageIndex + pageSize));
+    this.sum = 0;
+    this.dataSource.data.map( order => order.total).forEach( total => {
+      this.sum = this.sum + total;
+    });
+  }
+
+  selectAll() {
+    this.ELEMENT_DATA.forEach(elm => {
+      elm.isChecked = !elm.isChecked;
+    });
+  }
 }
