@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MessageNewComponent } from './message-new.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MaterialModule} from '../../../shared/material-module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('MessageNewComponent', () => {
   let component: MessageNewComponent;
@@ -8,7 +12,13 @@ describe('MessageNewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MessageNewComponent ]
+      declarations: [ MessageNewComponent ],
+      imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+      ],
     })
     .compileComponents();
   }));

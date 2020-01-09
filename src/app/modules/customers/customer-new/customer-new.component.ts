@@ -14,7 +14,7 @@ export class CustomerNewComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-              public dialog: MatDialog,
+              private dialog: MatDialog,
               private snackbar: MatSnackBar) {
   }
 

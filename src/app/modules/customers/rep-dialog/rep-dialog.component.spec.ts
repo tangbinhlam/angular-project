@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RepDialogComponent } from './rep-dialog.component';
+import {MaterialModule} from '../../../shared/material-module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('RepDialogComponent', () => {
   let component: RepDialogComponent;
@@ -8,7 +11,13 @@ describe('RepDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepDialogComponent ]
+      declarations: [ RepDialogComponent ],
+      imports: [
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+      ],
     })
     .compileComponents();
   }));
