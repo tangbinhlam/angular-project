@@ -10,15 +10,15 @@ const routes: Routes = [
     children: [
       {
         path: 'customers',
-        loadChildren: './modules/customers/customers.module#CustomersModule',
+        loadChildren: () => import('./modules/customers/customers.module').then(m => m.CustomersModule),
       },
       {
         path: 'messages',
-        loadChildren: './modules/messages/messages.module#MessagesModule',
+        loadChildren: () => import('./modules/messages/messages.module').then(m => m.MessagesModule),
       },
       {
         path: 'orders',
-        loadChildren: './modules/orders/orders.module#OrdersModule',
+        loadChildren: () => import('./modules/orders/orders.module').then(m => m.OrdersModule),
       },
     ]
   }
