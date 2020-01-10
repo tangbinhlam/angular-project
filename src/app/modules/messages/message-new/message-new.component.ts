@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import Department from '../../../domain/models/department.model';
-import {PriorityEmum} from '../../../domain/enums/priority.emum';
+
+import {PriorityEmum, Department} from '@osalam/domain';
 
 @Component({
   selector: 'osalam-message-new',

@@ -1,7 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {OrderService} from '../../../core/services/order.service';
 import {MatSort, MatTableDataSource} from '@angular/material';
-import Order from '../../../domain/models/order.model';
+
+import {OrderService} from '@osalam/core';
+import {Order} from '@osalam/domain';
 
 @Component({
   selector: 'osalam-order-list',

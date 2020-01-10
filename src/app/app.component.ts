@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'osalam-root',
   template: `
     <div class="ng-view"></div>
     <router-outlet></router-outlet>

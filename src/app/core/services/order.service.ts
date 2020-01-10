@@ -1,7 +1,9 @@
 import {Injectable} from '@angular/core';
-import {OrderClientService} from '../http/order-client.service';
 import {Observable} from 'rxjs';
-import Order from '../../domain/models/order.model';
+
+import {Order} from '@osalam/domain';
+
+import {OrderClientService} from '../http/order-client.service';
 
 @Injectable({
   providedIn: 'root'

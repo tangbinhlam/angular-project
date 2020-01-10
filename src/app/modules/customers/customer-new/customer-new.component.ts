@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {OsalamErrorStateMatcher} from '../../../shared/ErrorUtils/OsalamErrorStateMatcher';
 import {MatDialog, MatSnackBar} from '@angular/material';
+
+import {OsalamErrorStateMatcher} from '@osalam/shared';
+
 import {RepDialogComponent} from '../rep-dialog/rep-dialog.component';
 
 @Component({
