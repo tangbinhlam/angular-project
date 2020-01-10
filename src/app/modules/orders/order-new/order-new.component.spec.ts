@@ -1,9 +1,10 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
-import {OrderNewComponent} from './order-new.component';
-import {MaterialModule} from '../../../shared/material-module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {MaterialModule} from '@osalam/shared';
+
+import {OrderNewComponent} from './order-new.component';
 
 describe('OrderNewComponent', () => {
   let component: OrderNewComponent;

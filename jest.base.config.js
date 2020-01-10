@@ -16,5 +16,11 @@ module.exports = {
         '<rootDir>/node_modules/jest-preset-angular/InlineHtmlStripStylesTransformer'
       ]
     }
+  },
+  moduleNameMapper: {
+    '^@osalam/(.*)$': '<rootDir>/src/app/$1',
+    '^@osalam/domain$': '<rootDir>/src/app/domain/',
+    '^@osalam/shared$': '<rootDir>/src/app/shared/',
+    '^@osalam/core$': '<rootDir>/src/app/core/'
   }
 };

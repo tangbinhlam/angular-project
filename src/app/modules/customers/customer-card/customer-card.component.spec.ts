@@ -1,7 +1,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
+import {MaterialModule} from '@osalam/shared';
+
 import {CustomerCardComponent} from './customer-card.component';
-import {MaterialModule} from '../../../shared/material-module';
 
 describe('CustomerCardComponent', () => {
   let component: CustomerCardComponent;

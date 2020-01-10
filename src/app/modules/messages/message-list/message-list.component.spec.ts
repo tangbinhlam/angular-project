@@ -1,11 +1,12 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ReactiveFormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {MaterialModule} from '@osalam/shared';
 
 import {MessageListComponent} from './message-list.component';
 import {MessageNewComponent} from '../message-new/message-new.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import {MaterialModule} from '../../../shared/material-module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('MessageListComponent', () => {
   let component: MessageListComponent;

@@ -1,12 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialog, MatSnackBar} from '@angular/material';
+
+import {MaterialModule} from '@osalam/shared';
 
 import { CustomerListComponent } from './customer-list.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule} from '../../../shared/material-module';
 import {CustomerNewComponent} from '../customer-new/customer-new.component';
-import {CommonModule} from '@angular/common';
-import {MatDialog, MatSnackBar} from '@angular/material';
 
 describe('CustomerListComponent', () => {
   let component: CustomerListComponent;

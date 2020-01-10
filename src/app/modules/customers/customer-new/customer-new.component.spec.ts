@@ -1,12 +1,13 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
-import {CustomerNewComponent} from './customer-new.component';
-import {MaterialModule} from '../../../shared/material-module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import {RepDialogComponent} from '../rep-dialog/rep-dialog.component';
 import {MatDialog, MatSnackBar} from '@angular/material';
+
+import {MaterialModule} from '@osalam/shared';
+
+import {CustomerNewComponent} from './customer-new.component';
+import {RepDialogComponent} from '../rep-dialog/rep-dialog.component';
 
 describe('CostomerNewComponent', () => {
   let component: CustomerNewComponent;
